@@ -194,10 +194,10 @@ const SelectProduct = ({ id, obj, selectedProductList, setSelectedProductList, s
     return (
         <Grid container xs={12}>
             <Grid item xs={10}>
-                <TextField style={{ color: '#000000CC', width: '25vw', justifyContent: 'left', marginTop: 5 }} inputProps={{ style: { height: '0vh', color: '#000000CC' } }} disabled value={selectedProduct} />
+                <TextField style={{ color: '#000000CC', width: '25vw', justifyContent: 'left', marginTop: 2 }} inputProps={{ style: { height: '0vh', color: '#000000CC' } }} disabled value={selectedProduct} />
             </Grid>
             <Grid item xs={2} sx={{ color: '#00000033', marginTop: 0.3 }}>
-                <IconButton aria-label='create' onClick={() => setOpen(true)}>
+                <IconButton aria-label='create' onClick={() => setOpen(true)} size="small">
                     <CreateIcon style={{ color: '#00000033' }} />
                 </IconButton>
             </Grid>
