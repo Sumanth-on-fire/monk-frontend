@@ -1,4 +1,4 @@
-import { Button, Grid, TextField } from "@mui/material"
+import { Button, Grid, IconButton, TextField } from "@mui/material"
 import { useEffect, useState } from "react"
 import CloseIcon from '@mui/icons-material/Close';
 
@@ -16,9 +16,9 @@ const AddDiscount = ({ childIndex, isVariant, handleDelete, isCrossNecessary, pa
     const [isClicked, setIsClicked] = useState<boolean>(false)
     const [price, setPrice] = useState<number | null>(0)
     const dropDown = [{ val: '% off' }, { val: 'flat' }]
-    useEffect(()=>{
+    useEffect(() => {
         setIsClicked(false)
-    },[selectedProductList])
+    }, [selectedProductList])
     return (
         isClicked ?
             <Grid container xs={12} style={{ alignItems: 'center', marginTop: -5 }}>
@@ -68,13 +68,17 @@ const AddDiscount = ({ childIndex, isVariant, handleDelete, isCrossNecessary, pa
                     </Grid>
                     {
                         isVariant ?
-                            <Grid item xs={2} color={'#00000066'} sx={{ marginTop: '1.5vh', paddingLeft: !isVariant ? '0px' : '2vw' }} onClick={() => { handleCallBackDeleteVariantStates(parentIndex, childIndex) }}>
-                                <CloseIcon />
+                            <Grid item xs={2} color={'#00000066'} sx={{ marginTop: '0.9vh', paddingLeft: !isVariant ? '0px' : '1.5vw' }}>
+                                <IconButton aria-label='create' onClick={() => { handleCallBackDeleteVariantStates(parentIndex, childIndex) }} size="small">
+                                    <CloseIcon />
+                                </IconButton>
                             </Grid>
                             :
                             isCrossNecessary ?
-                                <Grid item xs={2} color={'#00000066'} sx={{ marginTop: '1.5vh', paddingLeft: !isVariant ? '0px' : '2vw' }} onClick={() => { handleDelete() }}>
-                                    <CloseIcon />
+                                <Grid item xs={2} color={'#00000066'} sx={{ marginTop: '0.9vh', paddingLeft: !isVariant ? '0.2vw' : '1.5vw' }}>
+                                    <IconButton aria-label='create' onClick={() => { handleDelete() }} size="small">
+                                        <CloseIcon />
+                                    </IconButton>
                                 </Grid>
                                 :
                                 <div></div>

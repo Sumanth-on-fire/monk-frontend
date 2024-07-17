@@ -56,6 +56,5 @@
   },
   "devDependencies": {
     "@types/react-beautiful-dnd": "^13.1.8"
-  },
-  "proxy": "http://localhost:3000/"
+  }
 }

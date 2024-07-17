@@ -58,7 +58,7 @@ const ProductTable = () => {
 
     useEffect(() => {
         if(hideVariants[hideVariants.length - 1]) setColLen(0)
-        else setColLen(selectedProductList[selectedProductList.length - 1][0].children.length * 3)
+        else setColLen(selectedProductList[selectedProductList.length - 1][0].children.filter((child: any) => child.checked === true).length * 3)
     }, [selectedProductList, hideVariants])
 
     useEffect(()=>{

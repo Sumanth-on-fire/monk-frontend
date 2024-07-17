@@ -28,17 +28,11 @@ const SelectProduct = ({ id, obj, selectedProductList, setSelectedProductList, s
 
     const fetchProducts = async (limit: any) => {
         try {
-            const resp = await fetch(`http://stageapi.monkcommerce.app/task/products/search?limit=${limit}&page=${limit / 10}`, {
+            const resp = await fetch(`https://stageapi.monkcommerce.app/task/products/search?limit=${limit}&page=${limit / 10}`, {
                 method: 'GET',
                 headers: {
                     'x-api-key': '72njgfa948d9aS7gs5',
-                    'Access-Control-Allow-Origin': '*',
-                    'Accept': '*/*',
-                    'Postman-Token': 'babf4349-aed8-4dbf-93d3-c6b06ae372c6',
-                    'Accept-Encoding': 'gzip, deflate, br',
-                    'Connection': 'keep-alive',
-                    'Referer': 'http://stageapi.monkcommerce.app/task/products/search',
-                    'Host': 'stageapi.monkcommerce.app'
+                    Accept : '*/*',
                 },
             })
 
